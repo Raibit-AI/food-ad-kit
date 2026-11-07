@@ -1,0 +1,16 @@
+{
+ "out": "out/my-ad",
+ "brand_color": "#A3192B",
+ "brand_line": "Your Restaurant · Your Town",
+ "shots": [
+  {"file": "clips/hook-noodle-lift.mp4", "start": 0, "dur": 2.0, "label": "Signature Noodles"},
+  {"file": "clips/dish-2.mp4", "start": 0, "dur": 2.0, "label": "Second Dish"},
+  {"file": "clips/dish-3-pour.mp4", "start": 0, "dur": 2.5, "label": "Third Dish"},
+  {"file": "clips/dish-4.mp4", "start": 0, "dur": 2.0, "label": "Fourth Dish"},
+  {"file": "clips/room.mp4", "start": 0, "dur": 1.0, "label": "Your Restaurant", "subline": "Your Town", "food": false}
+ ],
+ "endcard": {"bg": "#F3ECE0", "dur": 2.0,
+  "lines": [{"text": "Your Town", "size": 58, "color": "#8B1E1E"},
+            {"text": "Order pickup or reserve a table", "size": 56},
+            {"text": "yoursite.com", "size": 84, "color": "#8B1E1E", "bold": true}]}
+}

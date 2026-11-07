@@ -1,0 +1,15 @@
+{
+  "name": "raibit",
+  "description": "Free skills from Raibit for making and testing restaurant and food video ads.",
+  "owner": {
+    "name": "Raibit",
+    "url": "https://raibit.ai"
+  },
+  "plugins": [
+    {
+      "name": "food-ad-kit",
+      "source": "./plugins/food-ad-kit",
+      "description": "Find winning food ads, break them down, direct AI food shots, cut the ad, and improve it with blind A/B reviews."
+    }
+  ]
+}
