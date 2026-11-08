@@ -1,6 +1,6 @@
 {
   "name": "food-ad-kit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Five skills for making restaurant and food video ads: find winners in the Meta Ad Library, tear them down, direct AI food shots, build 9:16 and 4:5 cuts with ffmpeg, and improve the ad with blind A/B reviews.",
   "author": { "name": "Raibit", "url": "https://raibit.ai" },
   "homepage": "https://github.com/Raibit-AI/food-ad-kit",

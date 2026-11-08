@@ -131,13 +131,13 @@ def main(cfg_path):
     if cfg.get("ambience"):
         fc = (f"[1:a]atrim=0:{T},asetpts=N/SR/TB,afade=t=in:d=0.3,afade=t=out:st={max(T-1, 0)}:d=1[r];"
               f"[0:a]aresample=48000[s];[r][s]amix=inputs=2:normalize=0:duration=first,"
-              f"loudnorm=I=-14:TP=-1.5,alimiter=limit=0.74:level=false[a]")
+              f"loudnorm=I=-14:TP=-1.5,aformat=sample_rates=48000:sample_fmts=fltp:channel_layouts=stereo,alimiter=limit=0.74:level=false[a]")
         ins = ["-i", f"{tmp}/joined.mp4", "-stream_loop", "-1", "-i", P(cfg["ambience"])]
     else:
-        fc = "[0:a]loudnorm=I=-14:TP=-1.5,alimiter=limit=0.74:level=false[a]"
+        fc = "[0:a]loudnorm=I=-14:TP=-1.5,aformat=sample_rates=48000:sample_fmts=fltp:channel_layouts=stereo,alimiter=limit=0.74:level=false[a]"
         ins = ["-i", f"{tmp}/joined.mp4"]
     m = f"{out}-9x16.mp4"
-    ff(*ins, "-filter_complex", fc, "-map", "0:v", "-map", "[a]", "-t", str(T), "-c:v", "copy", "-c:a", "aac", "-b:a", "160k",
+    ff(*ins, "-filter_complex", fc, "-map", "0:v", "-map", "[a]", "-t", str(T), "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-ar", "48000",
        "-movflags", "+faststart", m)
     ff("-i", m, "-vf", f"crop={W}:1350:0:250", "-c:v", "libx264", "-crf", "19", "-pix_fmt", "yuv420p", "-c:a", "copy",
        "-movflags", "+faststart", f"{out}-4x5.mp4")
